@@ -156,7 +156,7 @@ to `iterrows`
 * Make sure you don't include sleeps in your code
 
 ```
-149.06 seconds
+148.06 seconds
 ```
 
 ## Creating the PySpark consumer
@@ -258,6 +258,9 @@ green_stream = green_stream \
 
 How does the record look after parsing? Copy the output. 
 
+```
+Row(lpep_pickup_datetime='2019-10-01 00:26:02', lpep_dropoff_datetime='2019-10-01 00:39:58', PULocationID=112, DOLocationID=196, passenger_count=1.0, trip_distance=5.88, tip_amount=0.0)
+```
 
 ### Question 7: Most popular destination
 
@@ -291,6 +294,17 @@ query.awaitTermination()
 
 Write the most popular destination, your answer should be *either* the zone ID or the zone name of this destination. (You will need to re-send the data for this to work)
 
+```
++------------------------------------------+------------+-----+
+|window                                    |DOLocationID|count|
++------------------------------------------+------------+-----+
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|74          |35482|
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|42          |31884|
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|41          |28122|
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|75          |25680|
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|129         |23860|
+|{2024-03-30 11:13:00, 2024-03-30 11:18:00}|7           |23066|
+```
 
 ## Submitting the solutions
 
